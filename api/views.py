@@ -17,3 +17,10 @@ def upload_file(request):
         serializer = FileSerializer(file_object, many=False)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def file_list(request):
+    files = File.objects.all()
+    serializer = FileSerializer(files, many=True)
+    return Response(serializer.data)
