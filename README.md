@@ -10,8 +10,9 @@
 ## Локальное развертывание проекта
 1. Клонируйте репозиторий git@github.com:syberflea/picasso_test.git.
 2. В каталоге с проектом  запустите docker compose в режиме демона:
-
-`sudo docker compose -f docker-compose.production.yml up -d`
+```
+sudo docker compose -f docker-compose.production.yml up -d`
+```
 
 3. Выполните миграции:
 ```
