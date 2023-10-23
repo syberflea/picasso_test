@@ -3,9 +3,13 @@ from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import MultiPartParser
 from rest_framework.response import Response
 
-from Picasso_test.tasks import create_task
+# from Picasso_test.tasks import create_task
 from api.models import File
 from api.serializers import FileSerializer
+
+
+def create_task(file_object):
+    return True
 
 
 @api_view(['POST'])
