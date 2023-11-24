@@ -1,8 +1,12 @@
-from django.urls import include, path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 
-from .views import upload_file, file_list
+from api import views
+
+router = DefaultRouter()
+router.register(r'upload', views.FileUploadViewSet, basename="upload")
+router.register(r'files', views.FileListViewSet, basename="files")
 
 urlpatterns = [
-    path('upload/', upload_file),
-    path('files/', file_list),
+    path('', include(router.urls)),
 ]
